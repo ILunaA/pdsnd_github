@@ -1,8 +1,10 @@
+#modules
 import os
 import time
 import pandas as pd
 import numpy as np
 
+# variables to be used in all the functions
 city_data = { 1: {'file': 'chicago.csv', 'city':'chicago'},
               2: {'file': 'new_york_city.csv', 'city': 'new york' },
               3: {'file': 'washington.csv','city': 'washington'  } }
@@ -14,6 +16,7 @@ months_data = dict(zip(months_id,months_name))
 days_name = ['all','monday','tuesday','wednesday','thursday','friday','saturday','sunday']
 days_id = list(range(8))
 days_data = dict(zip(days_id,days_name))
+#########
 
 def get_filters():
     """
@@ -25,7 +28,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "All" to apply no day filter
     """
     print('Hello! Let\'s explore some US bikeshare data!')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+    # get user input for city (chicago, new york city, washington).
 
     while True:
 
@@ -48,10 +51,9 @@ def get_filters():
         else:
             break
 
-       # get user input for month (all, january, february, ... , june)
-
     print('-'*40)
 
+    # get user input for month to be used as filter.
     while True:
 
         try:
@@ -122,10 +124,7 @@ def load_data(city, month, day):
     data_pkg_path = ''
     filename = city
     path = os.path.join(data_pkg_path, filename)
-    # print(path)
     df = pd.read_csv(path)
-    # print(df.head())
-
 
     ### transform to datetime and extract month,day,hour
     df['Start Time'] = pd.to_datetime(df['Start Time'])
@@ -188,19 +187,13 @@ def time_stats(df, month_value, day_value):
         print('Most popular month:',month_name)
     else :
         print('Filtered by month')
-    # mc_month = df['month'].mode()[0]
-    # month_name = months_data[mc_month]
-    # print('Most popular month:',month_name)
-
     # display the most common day of week
     if day_value == 'All':
         mc_dayown = df['dayname'].mode()[0]
         print('Most popular day of week:', mc_dayown)
     else :
         print('Filtered by day')
-    # mc_dayown = df['dayname'].mode()[0]
-    # print('Most popular day of week:', mc_dayown)
-    #
+
     # display the most common start hour
     popular_hour = df['hour'].mode()[0]
     print('Most popular start hour:', popular_hour)
@@ -284,8 +277,6 @@ def user_stats(df, city_value):
     start_time = time.time()
 
     # Display counts of user types
-#     user_types = df['User Type'].value_counts()
-#     print(user_types)
 
     for idx,name in enumerate(df['User Type'].value_counts().index.tolist()):
         print('Name :', name)
@@ -351,7 +342,6 @@ def show_data(df):
                     if show_more.lower() == 'y':
                         irows += 5
                         continue
-
 
                     else :
                         print("Done exploring data. I will terminate now.")
