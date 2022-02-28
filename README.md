@@ -39,10 +39,19 @@ bikeshare.py
 
 readme.txt
 
+### Modules used
+
+- os
+- pandas
+- numpy
+- time
+- plotly
+
 ### Credits
 Besides Udacity course resources, other resources used:
 https://pandas.pydata.org
 https://www.python.org/dev/peps/pep-0257/
+https://plotly.com/python/line-and-scatter/
 
 Books
 -Severance, Charles. 2013.Python for everyone. Exploring Data in Python 3.
