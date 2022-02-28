@@ -24,6 +24,15 @@ The **Chicago** and **New York City** files also have the following two columns:
       Gender
       Birth Year
 
+### Output and Analysis
+
+Descriptive statistics is used to get:
+
+- 1 Popular times of travel (i.e., occurs most often in the start time)
+- 2 Popular stations and trip
+- 3 Trip duration
+- 4 User info
+
 ### Files used
 bikeshare.py
 readme.txt
