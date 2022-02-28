@@ -3,6 +3,7 @@ import os
 import time
 import pandas as pd
 import numpy as np
+import plotly as pl
 
 # variables to be used in all the functions
 city_data = { 1: {'file': 'chicago.csv', 'city':'chicago'},
@@ -360,7 +361,20 @@ def show_data(df):
         else:
             break
 ####
+def create_plots(df):
+        """
+        Create plots for travel time and user type data vs time
 
+        Args:
+            (df) df - DataFrame to show
+
+        Returns:
+            plots as png in working directory
+
+
+        """
+
+###
 def main():
     while True:
         city, month, day = get_filters()
